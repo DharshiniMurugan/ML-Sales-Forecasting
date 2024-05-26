@@ -1,0 +1,65 @@
+
+<div class="Body-tag" style="display:flex;justify-content: center; ">
+  <div class="logo">
+    <img src="assets/logo.jpeg" width="75px" height="75px" alt="logo"><h1 style="color: lightblue;">Sales Forecast</h1>
+  </div>
+<mat-card class="example-card"> 
+  <div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card-header  class="head">
+      <mat-toolbar class ="Tool"appearance="fill">
+        login/Signup
+      </mat-toolbar>
+    </mat-card-header>
+  </div>
+    <mat-card-content>
+        <mat-tab-group>
+            <mat-tab label="Login" class="example-full-width">
+              <div>
+                <mat-form-field >
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Email" name="email"  value="" required [(ngModel)]="loginObj.email">
+              </mat-form-field>
+            </div>
+
+
+            <mat-form-field >
+              <mat-label>Password</mat-label>
+              <input type="password" name="password" matInput placeholder="password"  ngModel #password="ngModel" value="" minLength="6" required [(ngModel)]="loginObj.password">
+              <!--<mat-error *ngIf="password.errors && password.errors.required">Password is required</mat-error>
+              <mat-error *ngIf="password.errors && password.errors.minLength">Password must be of length 6</mat-error>-->
+            </mat-form-field>
+
+          <div >
+            <button  color="primary" (click)="OnLogin()">Login</button>
+        </div>
+
+          </mat-tab>
+            <mat-tab class="reg_g"label="Register">
+              <div>
+              <mat-form-field >
+              <mat-label>Username</mat-label>
+              <input  matInput placeholder="Username" name="username" ngModel #email="ngModel" value="" required [(ngModel)]="signupObj.username" >
+              <mat-error *ngIf="email.invalid">Username is required</mat-error>
+            </mat-form-field></div>
+
+            <div><mat-form-field >
+              <mat-label>Email</mat-label>
+              <input type="email" matInput placeholder="Email"  value="" required   name="email"  [(ngModel)]="signupObj.email">
+              <mat-error *ngIf="password.errors ">email is required</mat-error>
+            </mat-form-field></div>
+            <mat-form-field >
+              <mat-label>Password</mat-label>
+              <input type="password"  name="password" matInput placeholder="Confirm password" value="" required [(ngModel)]="signupObj.password">
+
+            </mat-form-field>
+
+          <div   >
+            <button class="hero-btn"(click)="OnSignup()">Register</button>
+        </div></mat-tab>
+
+        </mat-tab-group>
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

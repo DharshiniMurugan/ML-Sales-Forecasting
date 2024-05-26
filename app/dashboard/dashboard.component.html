@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="Body-tag" style="display:flex;justify-content: center;">
+    <div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card class="example-card ">
+        <mat-card-content>
+          <div class="text-center" >
+
+            <input type="file" (change)="onChange($event)" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" class="form-group">
+            <!--<button (click)="onUpload()" class="btn btn-success">Upload File</button>-->
+          </div>
+          <div>
+
+            <div>
+              <mat-label>Number</mat-label>
+              <input type="number" (change)="getName(name.value)" #name/>
+
+            </div>
+
+            <div>
+              <label class="col">
+                Select One
+              </label>
+              <div class="col-sm">
+                <select name="choose" (change)="chooseopt($event)" class="form-control">
+                  <option value="days">--select--</option>
+                  <option value="days">--days--</option>
+                  <option value="month">--monthly--</option>
+                  <option value="week">--weekly--</option>
+                  <option value="year">--yearly--</option>
+                  <option [value]="dep.Departmentid" *ngFor="let dep for DepartmentList">
+                    {{dep.departmentName}}
+
+                  </option>
+                </select></div>
+            </div>
+          </div>
+          <div>
+            <div   >
+              <input type="button" (click)="submitData()" value="upload File" />
+              <!--<button class="hero-btn"(click)="OnSub()" class="btn btn-success">Predict</button>-->
+          </div>
+          <!--<div>
+            <img [src]="fig_data" *ngIf="fig_data">
+          </div>-->
+        </div>
+
+
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+</div>
+</div>
